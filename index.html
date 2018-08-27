@@ -399,7 +399,7 @@ $(document).ready(function()
   					  $('.trShowCand').click(function() {
   						var PK = $(this).find('.pubkey')[0].getAttribute('data-sort');
   						$('#loaderL').click();
-  						$.get(API_ENDPOINT+"/candidate_card.php?pk="+PK, function(data) { 
+  						$.get(DOMAIN+"/candidate_card.php?pk="+PK, function(data) { 
   							$('#validatorCard').attr('data-title',PK);
   							$('#validatorCard').html(data);
   							$('#validatorCard').parent().find('.box_title')[0].innerHTML=PK;
