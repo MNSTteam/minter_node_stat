@@ -344,7 +344,7 @@ $(document).ready(function()
    			 		}
    			 		uptime=c['uptime'];
    			 		uptime=(''+uptime).substr(0, 4)+'%'
-   			 		if(c['realtimeTextStatus']=='Candidate') {
+   			 		if(c['EXISTTOP']==1) {
    			 			uptime='-';
    			 			c['uptime']=0;
    			 		}
@@ -359,7 +359,7 @@ $(document).ready(function()
    			 		   			 		
    			 		   			 		
    			 		   			 		
-   			 		items.push( "<tr class='"+cls+" trShowCand'><td style='font-weight:bold; text-align:center'  class='nobrdl'>"+c['rank']+"</td><td class='pubkey' data-sort='"+c['PKEY']+"'>"+PKEY+"</td><td style='font-weight:bold; text-align:center'>"+c['commission']+"%</td><td data-sort='"+STAKE+"'>"+c['total_stake']+" "+data['baseCoin']+(data['newData']['stakes'][c['PKEY']]?" <small style='color:#7e7e7e'>(+"+Math.round(data['newData']['stakes'][c['PKEY']])+")</small>":'')+"</td><td"+(c['realtimeTextStatus']=='Candidate'?' style="color:#7e7e7e"':'')+">"+c['realtimeTextStatus']+"</td><td data-sort='"+c['delegants']+"'>"+c['delegants']+(data['newData']['delegators'][c['PKEY']]?" <small style='color:#7e7e7e'>(+"+Math.round(data['newData']['delegators'][c['PKEY']])+")</small>":'')+"</td><td data-sort='"+c['uptime']+"' style='font-weight:bold; text-align:center'>"+uptime+"</td><td data-sort='"+c['create_time']['tm']+"'>"+age+"</td></tr>" );
+   			 		items.push( "<tr class='"+cls+" trShowCand'><td style='font-weight:bold; text-align:center'  class='nobrdl'>"+c['rank']+"</td><td class='pubkey' data-sort='"+c['PKEY']+"'>"+PKEY+"</td><td style='font-weight:bold; text-align:center'>"+c['commission']+"%</td><td data-sort='"+STAKE+"'>"+c['total_stake']+" "+data['baseCoin']+(data['newData']['stakes'][c['PKEY']]?" <small style='color:#7e7e7e'>(+"+Math.round(data['newData']['stakes'][c['PKEY']])+")</small>":'')+"</td><td"+(c['EXISTTOP']==1?' style="color:#7e7e7e"':'')+" data-sort='"+c['EXISTTOP']+"'>"+c['realtimeTextStatus']+"</td><td data-sort='"+c['delegants']+"'>"+c['delegants']+(data['newData']['delegators'][c['PKEY']]?" <small style='color:#7e7e7e'>(+"+Math.round(data['newData']['delegators'][c['PKEY']])+")</small>":'')+"</td><td data-sort='"+c['uptime']+"' style='font-weight:bold; text-align:center'>"+uptime+"</td><td data-sort='"+c['create_time']['tm']+"'>"+age+"</td></tr>" );
    			 	});
    			 });
   			});
